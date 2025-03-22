@@ -1,0 +1,44 @@
+.message-channel-page {
+  padding: 20px;
+
+  .card-header {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .channel-list {
+    margin-bottom: 20px;
+
+    .el-table {
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .add-channel {
+    text-align: right;
+
+    .el-button {
+      color: white;
+      background-color: #409eff;
+      border: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #66b1ff;
+      }
+    }
+  }
+
+  .el-dialog {
+    .el-form {
+      padding: 20px;
+    }
+
+    .el-form-item {
+      margin-bottom: 15px;
+    }
+  }
+}
