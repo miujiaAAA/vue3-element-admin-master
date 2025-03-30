@@ -30,17 +30,20 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-
 import MessageAPI from "@/api/system/message";
+
 // 定义左侧的消息通道列表，包含 key 和 name
 const channels = ref([
   { key: "email", name: "邮件" },
-  { key: "sms", name: "短信" },
+  { key: "note", name: "短信" },
 ]);
+
 // 定义当前选中的通道 key
 const selectedChannelKey = ref("email");
+
 // 定义右侧显示的内容
 const selectedChannelContent = ref("");
+
 // 定义加载状态
 const loading = ref(false);
 
@@ -49,7 +52,7 @@ function selectChannel(key: string) {
   loading.value = true;
   MessageAPI.getChannelInfo(key)
     .then(() => {
-      ElMessage.success("删除成功");
+      ElMessage.success(key);
     })
     .finally(() => (loading.value = false));
 }
